@@ -1,0 +1,33 @@
+# Node.js dependencies
+/node_modules/
+
+# Firebase service account key (절대 공개하면 안됩니다)
+serviceAccountKey.json
+
+# 로그 파일
+*.log
+
+# 빌드 파일
+/dist/
+/build/
+
+# .env 파일 (환경 변수 설정 파일)
+.env
+
+# macOS 시스템 파일
+.DS_Store
+
+# 윈도우 시스템 파일
+Thumbs.db
+
+# VSCode 설정 파일 (로컬 개발 환경에 관련된 설정)
+.vscode/
+
+# npm 패키지 캐시
+.npm/
+
+# 임시 파일
+*.swp
+
+# 기타 IDE 설정 파일
+.idea/
