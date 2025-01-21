@@ -1,4 +1,5 @@
-const { upsertTerminals } = require('./firebaseService')
+const { upsertTerminalList } = require('./firebaseService')
+const { getRequest } = require('./tmoneyApiService')
 // services/loadInfoService.js
 
 const axios = require('axios');
@@ -31,13 +32,14 @@ async function fetchLoadInfo(inDate = '00000000000000') {
     // 1) GET 요청
     const response = await getRequest(url);
 
+    
     // 2) 응답 데이터
-    const data = response.data;
-
+    const data = response.response;
     // 3) 응답 내 ter_list 추출
     const terList = data?.ter_list ?? [];
     if(terList.length > 0){
-        await upsertTerminals(terList);
+        console.error('terList 입력', terList);
+        await upsertTerminalList(terList);
     }
 
     return data;

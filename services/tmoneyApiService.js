@@ -9,7 +9,7 @@ const TMONEY_API_KEY = process.env.T_MONEY_API_KEY;
 const tmoneyInstance = axios.create({
   headers: {
     Accept: 'application/json',
-    'x-api-key': TMONEY_API_KEY,
+    'x-Gateway-APIKey': TMONEY_API_KEY,
   },
 });
 
@@ -20,6 +20,7 @@ const tmoneyInstance = axios.create({
  * @returns {Promise<object>} - 응답 데이터
  */
 async function getRequest(url, params = {}) {
+  console.log("TMONEY_API_KEY:", TMONEY_API_KEY)
   try {
     const response = await tmoneyInstance.get(url, { params });
     return response.data;
